@@ -200,6 +200,7 @@ class Coverflow extends Component {
       let baseWidth = width / (displayQuantityOfSide * 2 + 1);
       let distance = this._center() - index;
       let move = distance * baseWidth;
+      this.props.onCurrentTileChange(index);
       this.setState({current: index, move: move});
     }
   }
@@ -241,6 +242,7 @@ class Coverflow extends Component {
     let move = distance * baseWidth;
 
     if (current - 1 >= 0) {
+      this.props.onCurrentTileChange(current - 1);
       this.setState({ current: current - 1, move: move });
       TOUCH.lastMove = move;
     }
@@ -255,6 +257,7 @@ class Coverflow extends Component {
     let move = distance * baseWidth;
 
     if (current + 1 < this.props.children.length) {
+      this.props.onCurrentTileChange(current + 1);
       this.setState({ current: current + 1, move: move });
       TOUCH.lastMove = move;
     }
