@@ -41,6 +41,8 @@ class Coverflow extends Component {
       width: this.props.width || 'auto',
       height: this.props.height || 'auto'
     };
+
+    this.props.onCurrentTileChange(this.state.current);
   }
 
   componentDidMount() {
