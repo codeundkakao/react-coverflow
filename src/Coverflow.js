@@ -321,7 +321,8 @@ Coverflow.propTypes = {
   navigation: React.PropTypes.bool,
   enableHeading: React.PropTypes.bool,
   enableScroll: React.PropTypes.bool,
-  active: React.PropTypes.number
+  active: React.PropTypes.number,
+  onCurrentTileChange: React.PropTypes.func
 };
 
 Coverflow.defaultProps = {
