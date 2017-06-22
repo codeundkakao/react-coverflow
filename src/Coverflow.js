@@ -158,7 +158,7 @@ class Coverflow extends Component {
     let opacity = (depth <= displayQuantityOfSide) ? (1 - (displayQuantityOfSide - depth) * 0.05) : 0;
     // opacity = depth === 2 ? 0.92 : opacity;
     // opacity = depth === 3 ? 0.9 : opacity;
-    opacity = current === index ? 1 : opacity;
+    opacity = current === index ? 1 : Math.max(0, Math.min(opacity, 1));
     // Handle translateX
     if (index === current) {
       style['width'] = `${baseWidth}px`;
