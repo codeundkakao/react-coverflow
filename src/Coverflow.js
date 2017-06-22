@@ -155,9 +155,9 @@ class Coverflow extends Component {
     let offset = length % 2 === 0 ? -width/10 : 0;
     // Handle opacity
     let depth = displayQuantityOfSide - Math.abs(current - index);
-    let opacity = depth === 1 ? 0.95 : 0;
-    opacity = depth === 2 ? 0.92 : opacity;
-    opacity = depth === 3 ? 0.9 : opacity;
+    let opacity = (depth <= displayQuantityOfSide) ? (1 - (displayQuantityOfSide - depth) * 0.05) : 0;
+    // opacity = depth === 2 ? 0.92 : opacity;
+    // opacity = depth === 3 ? 0.9 : opacity;
     opacity = current === index ? 1 : opacity;
     // Handle translateX
     if (index === current) {
